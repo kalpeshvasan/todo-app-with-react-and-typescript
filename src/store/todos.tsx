@@ -18,6 +18,7 @@ export type TodosContext = {
     handleDeleteTodo:(id:string) => void;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const todosContext = createContext<TodosContext | null >(null)
 
 export const TodosProvideer = ({children}:TodosProviderProps) => {
@@ -26,6 +27,7 @@ export const TodosProvideer = ({children}:TodosProviderProps) => {
         try {
             const newTodos = localStorage.getItem("todos") || "[]";
             return JSON.parse(newTodos) as Todo[]
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
             return []
         }
@@ -79,6 +81,7 @@ export const TodosProvideer = ({children}:TodosProviderProps) => {
 }
 
 // consumer 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTodos = () => {
     const todosConsumer = useContext(todosContext);
     if(!todosConsumer){
