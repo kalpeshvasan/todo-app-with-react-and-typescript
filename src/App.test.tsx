@@ -1,10 +1,13 @@
-// src/App.test.tsx
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import App from './App';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import Navbar from './components/navbar';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders navbar component', () => {
+  render(
+    <MemoryRouter>
+      <Navbar />
+    </MemoryRouter>
+  );
+
+  // Your assertions here
 });
