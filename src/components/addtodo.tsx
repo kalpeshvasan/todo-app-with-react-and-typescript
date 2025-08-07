@@ -12,7 +12,7 @@ const AddToDo = () => {
     }
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} className="test">
         <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
         <button type="submit">Add</button>
     </form>
